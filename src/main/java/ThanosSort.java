@@ -21,14 +21,15 @@ public class ThanosSort {
 
     public static void BucketSort(int[] arr, int start, int end) {
         double sum = 0;
+        int len = end - start;
         for (int i = start; i < end; i++) {
             sum += arr[i];
         }
-        double mean = sum / (end - start);
+        double mean = sum / len;
 
-        int[] copy = new int[end - start];
+        int[] copy = new int[len];
         int left = 0;
-        int right = (end - start) - 1;
+        int right = len - 1;
 
         for (int i = 0; i < copy.length; i++) {
             if (arr[start + i] <= mean) {
