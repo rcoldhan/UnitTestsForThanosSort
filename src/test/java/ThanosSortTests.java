@@ -76,8 +76,8 @@ public class ThanosSortTests {
 
     @Test
     public void BucketSortSecondHalfOfArray() {
-        int[] arr = {4888, -1, -2147483648, 0, 123, 4, 2147483647, 2147483646};
-        int[] arrExpected = {4888, -1, -2147483648, 0, 4, 123, 2147483646, 2147483647};
+        int[] arr = {4888, -1, -2147483648, 12, 123, 4, 2147483647, 2147483646};
+        int[] arrExpected = {4888, -1, -2147483648, 12, 4, 123, 2147483646, 2147483647};
         ThanosSort.BucketSort(arr, arr.length / 2, arr.length);
         Assertions.assertArrayEquals(arrExpected, arr);
     }
