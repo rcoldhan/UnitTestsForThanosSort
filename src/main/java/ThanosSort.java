@@ -8,10 +8,10 @@ public class ThanosSort {
     }
 
     public static void thanosSort(int[] arr) {
-        BucketSort(arr, 0, arr.length);
+        bucketSort(arr, 0, arr.length);
     }
 
-    public static boolean IsSorted(int[] arr, int start, int end) {
+    public static boolean isSorted(int[] arr, int start, int end) {
         for (int i = start; i < end - 1; i++)
             if (arr[i] > arr[i + 1]) {
                 return false;
@@ -19,7 +19,7 @@ public class ThanosSort {
         return true;
     }
 
-    public static void BucketSort(int[] arr, int start, int end) {
+    public static void bucketSort(int[] arr, int start, int end) {
         double sum = 0;
         int len = end - start;
         for (int i = start; i < end; i++) {
@@ -41,11 +41,11 @@ public class ThanosSort {
             }
         }
         if (copy.length >= 0) System.arraycopy(copy, 0, arr, start, copy.length);
-        if (left > 1 && !IsSorted(arr, start, start + left)) {
-            BucketSort(arr, start, start + left);
+        if (left > 1 && !isSorted(arr, start, start + left)) {
+            bucketSort(arr, start, start + left);
         }
-        if (left < end - 1 && !IsSorted(arr, start + left, end)) {
-            BucketSort(arr, start + left, end);
+        if (left < end - 1 && !isSorted(arr, start + left, end)) {
+            bucketSort(arr, start + left, end);
         }
     }
 }
